@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-import secrets
 
 # Initialize the Flask application
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16)  # Generates a random key of 32 hex characters
+app.secret_key = "secret" # Generates a random key of 32 hex characters
 
 # Configure SQLAlchemy with multiple databases
 app.config['SQLALCHEMY_BINDS'] = {
